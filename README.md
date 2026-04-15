@@ -2,6 +2,13 @@
 
 A self-contained Subsonic demo server built from a prepared Suno music library.
 
+This demo intentionally serves a stricter compatibility profile for MuseAmp:
+
+- album IDs and track IDs are emitted as pure numeric strings
+- every downloadable audio asset is stored and served as `m4a`
+
+The official Subsonic API treats these IDs as opaque strings. This demo pins them to numeric values because MuseAmp currently expects numeric catalog IDs during download, import, and rebuild flows.
+
 The image bundles:
 
 - 2 albums
@@ -42,6 +49,16 @@ Direct utility endpoints:
 - `GET /lyrics/<id>`
 - `GET /playback/<id>`
 - `GET /health`
+
+## MuseAmp Compatibility Contract
+
+MuseAmp currently supports a Subsonic API subset with stricter media requirements than the upstream specification:
+
+- catalog IDs used for albums and tracks must be pure numeric strings
+- `/rest/stream.view` and `/rest/download.view` must return static `m4a` audio
+- song metadata should report `suffix=m4a` and `contentType=audio/mp4`
+
+This server normalizes those behaviors so it can act as a stable fixture for MuseAmp.
 
 ## Quick Start
 

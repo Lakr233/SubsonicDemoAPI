@@ -1,21 +1,21 @@
 {
-  "prepared_at": "2026-04-15T11:43:14.367723+00:00",
+  "prepared_at": "2026-04-15T14:54:41.694616+00:00",
   "artist": "Suno",
   "albums": [
     {
       "name": "Suno Review Album One",
       "track_total": 4,
-      "cover_file": "/Users/qaq/Desktop/My Album/albums/Suno Review Album One/cover.jpg"
+      "cover_file": "/Users/qaq/Documents/GitHub/SubsonicDemoAPI/albums/Suno Review Album One/cover.jpg"
     },
     {
       "name": "Suno Review Album Two",
       "track_total": 3,
-      "cover_file": "/Users/qaq/Desktop/My Album/albums/Suno Review Album Two/cover.jpg"
+      "cover_file": "/Users/qaq/Documents/GitHub/SubsonicDemoAPI/albums/Suno Review Album Two/cover.jpg"
     }
   ],
   "tracks": [
     {
-      "source_file": "/Users/qaq/Desktop/My Album/albums/Suno Review Album One/01 - Backroads and Barstools.wav",
+      "source_file": "/Users/qaq/Documents/GitHub/SubsonicDemoAPI/albums/Suno Review Album One/01 - Backroads and Barstools.m4a",
       "prepared_title": "Backroads and Barstools",
       "source_title": "Backroads and Barstools",
       "album": "Suno Review Album One",
@@ -28,12 +28,12 @@
       "duration_seconds": 213.72,
       "source_has_embedded_cover_before": false,
       "source_has_embedded_lyrics_before": false,
-      "lyrics_sidecar": "/Users/qaq/Desktop/My Album/albums/Suno Review Album One/01 - Backroads and Barstools.lrc",
-      "album_link": "/Users/qaq/Desktop/My Album/albums/Suno Review Album One/01 - Backroads and Barstools.wav",
+      "lyrics_sidecar": "/Users/qaq/Documents/GitHub/SubsonicDemoAPI/albums/Suno Review Album One/01 - Backroads and Barstools.lrc",
+      "album_link": "/Users/qaq/Documents/GitHub/SubsonicDemoAPI/albums/Suno Review Album One/01 - Backroads and Barstools.m4a",
       "lyrics_format": "lrc"
     },
     {
-      "source_file": "/Users/qaq/Desktop/My Album/albums/Suno Review Album One/02 - Golden Hour Promise.mp3",
+      "source_file": "/Users/qaq/Documents/GitHub/SubsonicDemoAPI/albums/Suno Review Album One/02 - Golden Hour Promise.m4a",
       "prepared_title": "Golden Hour Promise",
       "source_title": "Golden Hour Promise",
       "album": "Suno Review Album One",
@@ -43,15 +43,15 @@
       "suno_id": "218243ee-e268-4379-8072-62dca39d3ef8",
       "source_audio_url": "https://cdn1.suno.ai/218243ee-e268-4379-8072-62dca39d3ef8.mp3",
       "cover_url": "https://cdn2.suno.ai/image_large_218243ee-e268-4379-8072-62dca39d3ef8.jpeg",
-      "duration_seconds": 194.919979,
+      "duration_seconds": 194.92,
       "source_has_embedded_cover_before": true,
       "source_has_embedded_lyrics_before": true,
-      "lyrics_sidecar": "/Users/qaq/Desktop/My Album/albums/Suno Review Album One/02 - Golden Hour Promise.lrc",
-      "album_link": "/Users/qaq/Desktop/My Album/albums/Suno Review Album One/02 - Golden Hour Promise.mp3",
+      "lyrics_sidecar": "/Users/qaq/Documents/GitHub/SubsonicDemoAPI/albums/Suno Review Album One/02 - Golden Hour Promise.lrc",
+      "album_link": "/Users/qaq/Documents/GitHub/SubsonicDemoAPI/albums/Suno Review Album One/02 - Golden Hour Promise.m4a",
       "lyrics_format": "lrc"
     },
     {
-      "source_file": "/Users/qaq/Desktop/My Album/albums/Suno Review Album One/03 - Drizzle on the District Line.wav",
+      "source_file": "/Users/qaq/Documents/GitHub/SubsonicDemoAPI/albums/Suno Review Album One/03 - Drizzle on the District Line.m4a",
       "prepared_title": "Drizzle on the District Line",
       "source_title": "Drizzle on the District Line",
       "album": "Suno Review Album One",
@@ -64,12 +64,12 @@
       "duration_seconds": 166.44,
       "source_has_embedded_cover_before": false,
       "source_has_embedded_lyrics_before": false,
-      "lyrics_sidecar": "/Users/qaq/Desktop/My Album/albums/Suno Review Album One/03 - Drizzle on the District Line.lrc",
-      "album_link": "/Users/qaq/Desktop/My Album/albums/Suno Review Album One/03 - Drizzle on the District Line.wav",
+      "lyrics_sidecar": "/Users/qaq/Documents/GitHub/SubsonicDemoAPI/albums/Suno Review Album One/03 - Drizzle on the District Line.lrc",
+      "album_link": "/Users/qaq/Documents/GitHub/SubsonicDemoAPI/albums/Suno Review Album One/03 - Drizzle on the District Line.m4a",
       "lyrics_format": "lrc"
     },
     {
-      "source_file": "/Users/qaq/Desktop/My Album/albums/Suno Review Album One/04 - Snow on My Side of the Bed.wav",
+      "source_file": "/Users/qaq/Documents/GitHub/SubsonicDemoAPI/albums/Suno Review Album One/04 - Snow on My Side of the Bed.m4a",
       "prepared_title": "Snow on My Side of the Bed",
       "source_title": "Snow on My Side of the Bed",
       "album": "Suno Review Album One",
@@ -82,12 +82,12 @@
       "duration_seconds": 234.76,
       "source_has_embedded_cover_before": false,
       "source_has_embedded_lyrics_before": false,
-      "lyrics_sidecar": "/Users/qaq/Desktop/My Album/albums/Suno Review Album One/04 - Snow on My Side of the Bed.lrc",
-      "album_link": "/Users/qaq/Desktop/My Album/albums/Suno Review Album One/04 - Snow on My Side of the Bed.wav",
+      "lyrics_sidecar": "/Users/qaq/Documents/GitHub/SubsonicDemoAPI/albums/Suno Review Album One/04 - Snow on My Side of the Bed.lrc",
+      "album_link": "/Users/qaq/Documents/GitHub/SubsonicDemoAPI/albums/Suno Review Album One/04 - Snow on My Side of the Bed.m4a",
       "lyrics_format": "lrc"
     },
     {
-      "source_file": "/Users/qaq/Desktop/My Album/albums/Suno Review Album Two/01 - Golden Hour Promise (WAV).wav",
+      "source_file": "/Users/qaq/Documents/GitHub/SubsonicDemoAPI/albums/Suno Review Album Two/01 - Golden Hour Promise (WAV).m4a",
       "prepared_title": "Golden Hour Promise (WAV)",
       "source_title": "Golden Hour Promise",
       "album": "Suno Review Album Two",
@@ -100,12 +100,12 @@
       "duration_seconds": 194.92,
       "source_has_embedded_cover_before": false,
       "source_has_embedded_lyrics_before": false,
-      "lyrics_sidecar": "/Users/qaq/Desktop/My Album/albums/Suno Review Album Two/01 - Golden Hour Promise (WAV).lrc",
-      "album_link": "/Users/qaq/Desktop/My Album/albums/Suno Review Album Two/01 - Golden Hour Promise (WAV).wav",
+      "lyrics_sidecar": "/Users/qaq/Documents/GitHub/SubsonicDemoAPI/albums/Suno Review Album Two/01 - Golden Hour Promise (WAV).lrc",
+      "album_link": "/Users/qaq/Documents/GitHub/SubsonicDemoAPI/albums/Suno Review Album Two/01 - Golden Hour Promise (WAV).m4a",
       "lyrics_format": "lrc"
     },
     {
-      "source_file": "/Users/qaq/Desktop/My Album/albums/Suno Review Album Two/02 - Tangled Up In You.wav",
+      "source_file": "/Users/qaq/Documents/GitHub/SubsonicDemoAPI/albums/Suno Review Album Two/02 - Tangled Up In You.m4a",
       "prepared_title": "Tangled Up In You",
       "source_title": "Tangled Up In You",
       "album": "Suno Review Album Two",
@@ -118,12 +118,12 @@
       "duration_seconds": 202.752,
       "source_has_embedded_cover_before": false,
       "source_has_embedded_lyrics_before": false,
-      "lyrics_sidecar": "/Users/qaq/Desktop/My Album/albums/Suno Review Album Two/02 - Tangled Up In You.lrc",
-      "album_link": "/Users/qaq/Desktop/My Album/albums/Suno Review Album Two/02 - Tangled Up In You.wav",
+      "lyrics_sidecar": "/Users/qaq/Documents/GitHub/SubsonicDemoAPI/albums/Suno Review Album Two/02 - Tangled Up In You.lrc",
+      "album_link": "/Users/qaq/Documents/GitHub/SubsonicDemoAPI/albums/Suno Review Album Two/02 - Tangled Up In You.m4a",
       "lyrics_format": "lrc"
     },
     {
-      "source_file": "/Users/qaq/Desktop/My Album/albums/Suno Review Album Two/03 - You Got Me Tilting.wav",
+      "source_file": "/Users/qaq/Documents/GitHub/SubsonicDemoAPI/albums/Suno Review Album Two/03 - You Got Me Tilting.m4a",
       "prepared_title": "You Got Me Tilting",
       "source_title": "You Got Me Tilting",
       "album": "Suno Review Album Two",
@@ -136,8 +136,8 @@
       "duration_seconds": 183.96,
       "source_has_embedded_cover_before": false,
       "source_has_embedded_lyrics_before": false,
-      "lyrics_sidecar": "/Users/qaq/Desktop/My Album/albums/Suno Review Album Two/03 - You Got Me Tilting.lrc",
-      "album_link": "/Users/qaq/Desktop/My Album/albums/Suno Review Album Two/03 - You Got Me Tilting.wav",
+      "lyrics_sidecar": "/Users/qaq/Documents/GitHub/SubsonicDemoAPI/albums/Suno Review Album Two/03 - You Got Me Tilting.lrc",
+      "album_link": "/Users/qaq/Documents/GitHub/SubsonicDemoAPI/albums/Suno Review Album Two/03 - You Got Me Tilting.m4a",
       "lyrics_format": "lrc"
     }
   ],

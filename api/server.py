@@ -5,11 +5,8 @@ from __future__ import annotations
 import base64
 import hashlib
 import json
-import mimetypes
 import os
 import posixpath
-import re
-import shutil
 import time
 from dataclasses import dataclass
 from http import HTTPStatus
@@ -27,14 +24,12 @@ MANIFEST_PATH = Path(
 SUBSONIC_VERSION = "1.16.1"
 SERVER_NAME = "my-album-subsonic"
 SERVER_TYPE = "my-album"
-ARTIST_ID = "artist-suno"
-ROOT_DIRECTORY_ID = "root"
-
-
-def slugify(value: str) -> str:
-    lowered = value.strip().lower()
-    lowered = re.sub(r"[^a-z0-9]+", "-", lowered)
-    return lowered.strip("-") or "item"
+ARTIST_ID = "1"
+ROOT_DIRECTORY_ID = "0"
+ALBUM_ID_BASE = 1000
+TRACK_ID_BASE = 2000
+SERVED_AUDIO_SUFFIX = "m4a"
+SERVED_AUDIO_CONTENT_TYPE = "audio/mp4"
 
 
 def first(values: dict[str, list[str]], key: str, default: str = "") -> str:
@@ -69,6 +64,18 @@ def decode_subsonic_password(raw_password: str) -> str:
     return raw_password
 
 
+def numeric_id(base: int, index: int) -> str:
+    return str(base + index)
+
+
+def require_supported_audio(source_path: Path) -> Path:
+    if source_path.suffix.lower() != f".{SERVED_AUDIO_SUFFIX}":
+        raise ValueError(
+            f"expected static .{SERVED_AUDIO_SUFFIX} library asset, got '{source_path.name}'"
+        )
+    return source_path
+
+
 @dataclass(frozen=True)
 class Track:
     id: str
@@ -87,12 +94,11 @@ class Track:
 
     @property
     def suffix(self) -> str:
-        return self.audio_path.suffix.lower().lstrip(".")
+        return SERVED_AUDIO_SUFFIX
 
     @property
     def content_type(self) -> str:
-        guessed, _ = mimetypes.guess_type(self.audio_path.name)
-        return guessed or "application/octet-stream"
+        return SERVED_AUDIO_CONTENT_TYPE
 
     @property
     def size(self) -> int:
@@ -182,10 +188,14 @@ class Library:
         track_entries = raw.get("tracks", [])
 
         albums_by_name: dict[str, Album] = {}
-        album_order: list[str] = []
+        album_order: list[str] = [item["name"] for item in album_entries]
         album_cover_by_name = {
             item["name"]: resolve_manifest_path(item["cover_file"])
             for item in album_entries
+        }
+        album_ids_by_name = {
+            item["name"]: numeric_id(ALBUM_ID_BASE, index)
+            for index, item in enumerate(album_entries, start=1)
         }
 
         tracks_by_album: dict[str, list[Track]] = {}
@@ -194,8 +204,12 @@ class Library:
             album_name = item["album"]
             if album_name not in album_order:
                 album_order.append(album_name)
-            album_id = f"album-{slugify(album_name)}"
-            track_id = f"track-{index:02d}"
+            album_id = album_ids_by_name.setdefault(
+                album_name,
+                numeric_id(ALBUM_ID_BASE, len(album_ids_by_name) + 1),
+            )
+            track_id = numeric_id(TRACK_ID_BASE, index)
+            audio_path = require_supported_audio(resolve_manifest_path(item["album_link"]))
             track = Track(
                 id=track_id,
                 title=item["prepared_title"],
@@ -206,7 +220,7 @@ class Library:
                 track_number=int(item["track_number"]),
                 track_total=int(item["track_total"]),
                 duration_seconds=round(float(item["duration_seconds"])),
-                audio_path=resolve_manifest_path(item["album_link"]),
+                audio_path=audio_path,
                 lyrics_path=resolve_manifest_path(item["lyrics_sidecar"]),
                 cover_path=album_cover_by_name[album_name],
                 year=manifest_year,
@@ -217,7 +231,7 @@ class Library:
         self.albums_by_id: dict[str, Album] = {}
         albums: list[Album] = []
         for album_name in album_order:
-            album_id = f"album-{slugify(album_name)}"
+            album_id = album_ids_by_name[album_name]
             album = Album(
                 id=album_id,
                 name=album_name,
