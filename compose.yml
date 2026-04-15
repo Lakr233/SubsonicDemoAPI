@@ -1,0 +1,16 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: ./api/Dockerfile
+    container_name: subsonic-demo-api
+    environment:
+      HOST: 0.0.0.0
+      PORT: 8080
+      LIBRARY_ROOT: /app/albums
+      LIBRARY_MANIFEST_PATH: /app/albums/library_manifest.json
+      SUBSONIC_USERNAME: ${SUBSONIC_USERNAME:-admin}
+      SUBSONIC_PASSWORD: ${SUBSONIC_PASSWORD:-admin123}
+    ports:
+      - "127.0.0.1:8080:8080"
+    restart: unless-stopped
